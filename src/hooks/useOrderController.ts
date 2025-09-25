@@ -72,8 +72,8 @@ export function useOrderController() {
 
 
   useEffect(() => {
+    const timeouts = orderTimeouts.current;
     return () => {
-      const timeouts = orderTimeouts.current;
       for (const [orderId] of timeouts) {
         clearOrderTimeout(orderId);
       }
